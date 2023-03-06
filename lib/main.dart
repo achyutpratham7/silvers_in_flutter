@@ -118,8 +118,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(40),
-                    child: ListTile(
-                      tileColor: Colors.amber,
+                    child: ExpansionTile(
                       leading: CircleAvatar(
                         radius: 50,
                         child: Text(
@@ -127,19 +126,23 @@ class _HomePageState extends State<HomePage> {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      title: Text("pratham"),
-                      subtitle: Text(
-                        "Scientists' research has revealed that viruses are by far the most abundant life forms on Earth. There are a million times more viruses on the planet than stars in the universe. Viruses also harbor the majority of genetic diversity on Earth. Scientists are finding evidence of viruses as a planetary force, influencing the global climate and geochemical cycles. They have also profoundly shaped the evolution of their hosts. The human genome, for example, contains 100,000 segments of virus DNA.",
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      title: const Text("pratham"),
                       trailing: TextButton(
                           style: TextButton.styleFrom(
                               foregroundColor: Colors.green,
                               elevation: 2,
                               backgroundColor: Colors.white),
                           onPressed: () {},
-                          child: Text("SEND")),
+                          child: const Text("SEND")),
+                      children: const [
+                        ListTile(
+                          title: Text(
+                            "Scientists' research has revealed that viruses are by far the most abundant life forms on Earth. There are a million times more viruses on the planet than stars in the universe. Viruses also harbor the majority of genetic diversity on Earth. Scientists are finding evidence of viruses as a planetary force, influencing the global climate and geochemical cycles. They have also profoundly shaped the evolution of their hosts. The human genome, for example, contains 100,000 segments of virus DNA.",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ),
